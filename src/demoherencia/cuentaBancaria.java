@@ -1,7 +1,8 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+    Pérez Lira Jorge Alberto
+    Ingenieria en Sistemas Computacionales
+    Programacion Orientada a Objetos
+    MS2     15470147
  */
 package demoherencia;
 
@@ -22,45 +23,39 @@ public class cuentaBancaria {
     private void NumeroDeCuenta(int numeroDeCuenta){
         this.numeroDeCuenta = numeroDeCuenta;
     }
-    
     private void Cliente(String cliente){
         this.cliente = cliente;
     }
-    
     public void Depositar(double cantidad){
         if (this.puedeDepositar(cantidad)){
             this.saldo = saldo + cantidad;
         }
         else {
-            System.out.println("No se puede hacer el deposito.");
+            System.out.println("No se puede realizar el deposito.");
         }
     }
-    
     public void Retirar(double cantidad){
         if (this.puedeRetirar(cantidad)){
             this.saldo = saldo - cantidad;
         }
         else {
-            System.out.println("No se puede hacer el retiro.");
+            System.out.println("No se puede realizar el retiro.");
         }
     }
-    
     public boolean puedeDepositar(double cantidad){
-        boolean siPuedeDepositar = false;
+        boolean siSePuedeDepositar = false;
         if (cantidad > 0) {
-            siPuedeDepositar = true;
+            siSePuedeDepositar = true;
         }
-        return siPuedeDepositar;
+        return siSePuedeDepositar;
     }
-    
     public boolean puedeRetirar(double cantidad){
-        boolean siPuedeRetirar = false;
+        boolean siSePuedeRetirar = false;
         if (cantidad < this.saldo){
-            siPuedeRetirar = true;
+            siSePuedeRetirar = true;
         }
-        return siPuedeRetirar;
+        return siSePuedeRetirar;
     }
-    
     public double getSaldo(){
         return this.saldo;
     }
